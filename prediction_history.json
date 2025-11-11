@@ -1,0 +1,60 @@
+[
+    {
+        "timestamp": "2025-04-15T23:54:14.727860",
+        "result": true
+    },
+    {
+        "timestamp": "2025-04-15T23:56:11.506881",
+        "result": true
+    },
+    {
+        "timestamp": "2025-04-15T23:58:34.680108",
+        "result": false
+    },
+    {
+        "timestamp": "2025-04-16T00:01:37.353640",
+        "result": true
+    },
+    {
+        "timestamp": "2025-04-21T14:53:58.787206",
+        "result": true,
+        "confidence": 52.01246738433838
+    },
+    {
+        "timestamp": "2025-04-21T14:55:50.066489",
+        "result": false,
+        "confidence": 49.26123023033142
+    },
+    {
+        "timestamp": "2025-04-22T13:12:52.311184",
+        "result": false
+    },
+    {
+        "timestamp": "2025-04-22T13:14:45.642730",
+        "result": true
+    },
+    {
+        "timestamp": "2025-04-25T23:39:14.566039",
+        "result": true
+    },
+    {
+        "timestamp": "2025-04-26T11:16:58.034504",
+        "result": true
+    },
+    {
+        "timestamp": "2025-04-26T11:25:26.654010",
+        "result": false
+    },
+    {
+        "timestamp": "2025-04-26T11:28:17.640481",
+        "result": true
+    },
+    {
+        "timestamp": "2025-05-03T00:15:53.456591",
+        "result": false
+    },
+    {
+        "timestamp": "2025-05-03T00:17:16.678795",
+        "result": true
+    }
+]

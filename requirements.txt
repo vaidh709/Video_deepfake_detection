@@ -1,0 +1,7 @@
+streamlit==1.26.0
+tensorflow==2.13.0
+numpy==1.25.2
+opencv-python==4.8.0.74
+plotly==5.15.0
+pandas==2.0.3
+bcrypt==4.0.1
