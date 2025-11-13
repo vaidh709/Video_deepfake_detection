@@ -1,1 +1,94 @@
+o
 
+    â§þgh  ã                   @   sš   d dl Zd dlZd dlZd dlZd dlZd dlZd dlZdd„ Zdd„ Zdd„ Z	dZ
+d	d„ Zd
+d„ Zdd„ Z	d
+d„ Zdd„ Z
+dd„ ZedkrKeƒ  dS dS )é    Nc                  C   s8   t ddƒ
+} t | ¡W  d   ƒ S 1 sw   Y  d S )Nzdb.jsonÚr)ÚopenÚjsonÚload©Úf© r   ú8C:\Users\garvr\Downloads\archive\superlast\deep\login.pyÚ
+load_users   s   $ÿr
+   c                 C   s    t ƒ }| | ¡t|ƒko| dkS )NZadmin)r
+   ÚgetÚ
+hash_password)ÚusernameÚpasswordÚusersr   r   r	   Úis_admin   s   r   c                 C   s   t  |  ¡ ¡ ¡ S ©N)ÚhashlibÚsha256ÚencodeÚ	hexdigest©r   r   r   r	   r      s   r   z
+users.jsonc                  C   sz   t j t¡s!ttdƒ} t i | ¡ W d   ƒ n1 sw   Y  ttdƒ
+} t | ¡W  d   ƒ S 1 s6w   Y  d S )NÚwr   )ÚosÚpathÚexistsÚUSER_CREDENTIALS_FILEr   r   Údumpr   r   r   r   r	   r
+      s   ÿ$ÿc                 C   s<   t tdƒ}t | |¡ W d   ƒ d S 1 sw   Y  d S )Nr   )r   r   r   r   )r   r   r   r   r	   Ú
+save_users!   s   "ÿr   c                 C   s   t  |  ¡ t  ¡ ¡ ¡ S r   )ÚbcryptZhashpwr   ZgensaltÚdecoder   r   r   r	   r   %   s   c                 C   s   t  |  ¡ | ¡ ¡S r   )r   Zcheckpwr   )r   Úhashedr   r   r	   Úcheck_password(   s   r!   c                 C   s   d}t  || ¡S )NzD^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$)ÚreÚmatch)r   Úpatternr   r   r	   Úis_strong_password+   s   r%   c            	      C   s`  t jddd tƒ } dt jvrdt j_t jddd t jd	dd t jd
+dd t  d¡\}}| t jdddr=dt j_W d   ƒ n1 sGw   Y  | t jd
+ddrZd
+t j_W d   ƒ n1 sdw   Y  t  d¡ t jjdkr»t  d¡ t j	ddd}t j	dddd}t jddddrº|| v rµt
+|| | ƒrµt  d|› d¡ dt jd< |t jd< t  d¡ q't  
+d¡ nlt jjd
+kr't  d ¡ t j	dd!d}t j	ddd"d}t j	d#dd$d}t  d%¡}t jd
+d&ddr'|sôt  d'¡ n3|| v rþt  
+d(¡ n)||kr	t  
+d)¡ nt|ƒst  
+d*¡ nt|ƒ| |< t| ƒ t  d+¡ dt j_t jd,dd d S )-NzLogin | Deepfake Detectoru   ðŸ”)Ú
+page_titleÚ	page_iconÚ	auth_modeÚLoginaÜ  
+        <style>
+            .stApp {
+                background: url("https://images.unsplash.com/photo-1516117172878-fd2c41f4a759") no-repeat center center fixed;
+                background-size: cover;
+            }
+            .auth-box {
+                background-color: rgba(255, 255, 255, 0.1);
+                padding: 2rem;
+                border-radius: 20px;
+                box-shadow: 0px 4px 30px rgba(0, 0, 0, 0.4);
+                width: 400px;
+                margin: auto;
+            }
+            .gradient-btn {
+                background: linear-gradient(to right, #f43b47, #453a94);
+                border: none;
+                border-radius: 30px;
+                padding: 10px 25px;
+                font-size: 16px;
+                color: white;
+                width: 100%;
+                margin-top: 20px;
+            }
+            .auth-toggle {
+                display: flex;
+                justify-content: center;
+                margin-bottom: 20px;
+            }
+            .auth-toggle button {
+                padding: 0.5rem 2rem;
+                border: none;
+                font-weight: bold;
+                border-radius: 25px 0 0 25px;
+                margin-right: 0.5rem;
+            }
+            .selected {
+                background: linear-gradient(to right, #f43b47, #453a94);
+                color: white;
+            }
+            .unselected {
+                background: #eee;
+                color: #333;
+            }
+        </style>
+    T)Úunsafe_allow_htmlz<div class='auth-box'>u@   <h2 style='text-align:center;'>ðŸ” Video Deepfake Detector</h2>é   )Úuse_container_widthZRegisterz---zLogin to your accountzUser IDZ
+login_user)ÚkeyÚPasswordr   Z
+login_pass)Útyper-   zLog InZ	login_btn)r-   r,   z	Welcome, ú!Ú
+authenticatedr
+   z
+pages/home.pyzInvalid username or password.zRegister a new accountZreg_userZreg_passzConfirm PasswordZreg_confz!I agree to the terms & conditionsZreg_btnz)You must agree to the terms & conditions.zUsername already exists.zPasswords do not match.ziPassword must be at least 8 characters long, include uppercase, lowercase, number, and special character.z,Registration successful! You can now log in.z</div>)ÚstÚset_page_configr
+   Ú
+session_stater(   ÚmarkdownÚcolumnsÚbuttonÚ	subheaderÚ
+text_inputr!   ÚsuccessÚswitch_pageÚerrorÚcheckboxÚwarningr%   r   r   )	r   Zcol1Zcol2r
+   r   Znew_usernameZnew_passwordZconfirm_passwordZagreer   r   r	   Úmain/   sj   
+-Ó/€þ€þ
+
+
+
+
+€
+
+
+
+
+r?   Ú__main__)Ú	streamlitr2   r   r   r   r"   r   r
+   r   r   r   r   r!   r%   r?   Ú__name__r   r   r   r	   Ú<module>   s(    p
+ÿ
